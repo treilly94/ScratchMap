@@ -10,7 +10,7 @@ function showCountryList() {
 }
 
 function addToCountryList() {
-    var addCountry = document.getElementById('addCountry').value;
+    var addCountry = document.getElementById('country').value;
     addCountry = "'" + addCountry + "'"
     if (addCountry.length == 2) {
         alert("There is no value");
@@ -20,6 +20,19 @@ function addToCountryList() {
     }
     else {
         countryList.push(addCountry);
+    }
+
+}
+
+function removeFromCountryList() {
+    var rmCountry = document.getElementById('country').value;
+    rmCountry = "'" + rmCountry + "'"
+    var index = countryList.indexOf(rmCountry);
+    if (index > -1) {
+        countryList.splice(index, 1);
+    }
+    else {
+        alert("This country is not already in the list");
     }
 
 }
