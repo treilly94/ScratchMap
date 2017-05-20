@@ -1,7 +1,7 @@
 var map;
-var countryList = ["'US'"];
+var countryList = [];
 
-function updateCountryList() {
+function showCountryList() {
     document.getElementById('countrys').innerHTML = ""
     for (i = 0; i < countryList.length; i++) {
         var newCountry = countryList[i] + " <br>";
@@ -25,7 +25,13 @@ function addToCountryList() {
 }
 
 function initMap() {
-    var country_str = "ISO_2DIGIT IN (" + countryList + ")"
+    var country_str = "ISO_2DIGIT IN ("
+    if (countryList.length == 0) {
+        country_str += "'')"
+    }
+    else {
+        country_str += countryList + ")"
+    }
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 2,
         center: {
