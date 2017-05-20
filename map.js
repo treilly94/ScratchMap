@@ -44,8 +44,3 @@ function initMap() {
         suppressInfoWindows: true
     });
 }
-
-function refreshMap() {
-    //Doesnt work yet
-    google.maps.event.trigger(map, 'resize');
-}
